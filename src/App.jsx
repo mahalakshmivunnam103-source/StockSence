@@ -42,6 +42,14 @@ function App() {
       status: "Low Stock",
     },
   ]);
+  const [showForm, setShowForm] = useState(false);
+  const [newProduct, setNewProduct] = useState({
+    name: "",
+    sku: "",
+    category: "",
+    warehouse: "",
+    quantity: ""
+  });
 
   const addProduct = () => {
     const newProduct = {
@@ -251,65 +259,173 @@ function App() {
           </>
         )}
 
-        {/* PRODUCTS */}
-        {page === "products" && (
-          <section style={styles.tableBox}>
+{/* PRODUCTS */}
+{page === "products" && (
+  <section style={styles.tableBox}>
 
-            <div style={styles.productHeader}>
-              <h2>Product Management</h2>
+    <div style={styles.productHeader}>
+      <h2>Product Management</h2>
 
-              <button
-                style={styles.addButton}
-                onClick={addProduct}
-              >
-                + Add Product
-              </button>
-            </div>
+      <button
+        style={styles.addButton}
+        onClick={() => setShowForm(true)}
+      >
+        + Add Product
+      </button>
+    </div>
 
-            <input
-              type="text"
-              placeholder="Search products..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              style={styles.search}
-            />
+    {showForm && (
+      <div
+        style={{
+          marginTop: "20px",
+          padding: "20px",
+          border: "1px solid #d1d5db",
+          borderRadius: "10px",
+          background: "#f9fafb"
+        }}
+      >
+        <h3>Add Product</h3>
 
-            <table style={styles.table}>
-              <thead>
-                <tr>
-                  <th>Product</th>
-                  <th>SKU</th>
-                  <th>Category</th>
-                  <th>Warehouse</th>
-                  <th>Quantity</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
+        <input
+          placeholder="Product Name"
+          value={newProduct.name}
+          onChange={(e) =>
+            setNewProduct({
+              ...newProduct,
+              name: e.target.value
+            })
+          }
+          style={styles.search}
+        />
 
-              <tbody>
-                {filteredProducts.map((product) => (
-                  <tr key={product.id}>
-                    <td>{product.name}</td>
-                    <td>{product.sku}</td>
-                    <td>{product.category}</td>
-                    <td>{product.warehouse}</td>
-                    <td>{product.quantity}</td>
-                    <td
-                      style={
-                        product.status === "Low Stock"
-                          ? styles.waiting
-                          : styles.done
-                      }
-                    >
-                      {product.status}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+        <input
+          placeholder="SKU"
+          value={newProduct.sku}
+          onChange={(e) =>
+            setNewProduct({
+              ...newProduct,
+              sku: e.target.value
+            })
+          }
+          style={styles.search}
+        />
 
-          </section>
-        )}
+        <input
+          placeholder="Category"
+          value={newProduct.category}
+          onChange={(e) =>
+            setNewProduct({
+              ...newProduct,
+              category: e.target.value
+            })
+          }
+          style={styles.search}
+        />
+
+        <input
+          placeholder="Warehouse"
+          value={newProduct.warehouse}
+          onChange={(e) =>
+            setNewProduct({
+              ...newProduct,
+              warehouse: e.target.value
+            })
+          }
+          style={styles.search}
+        />
+
+        <input
+          placeholder="Quantity"
+          type="number"
+          value={newProduct.quantity}
+          onChange={(e) =>
+            setNewProduct({
+              ...newProduct,
+              quantity: e.target.value
+            })
+          }
+          style={styles.search}
+        />
+
+        <button
+          style={styles.addButton}
+          onClick={() => {
+            const product = {
+              id: products.length + 1,
+              name: newProduct.name,
+              sku: newProduct.sku,
+              category: newProduct.category,
+              warehouse: newProduct.warehouse,
+              quantity: Number(newProduct.quantity),
+              status:
+                Number(newProduct.quantity) <= 10
+                  ? "Low Stock"
+                  : "In Stock"
+            };
+
+            setProducts([...products, product]);
+
+            setNewProduct({
+              name: "",
+              sku: "",
+              category: "",
+              warehouse: "",
+              quantity: ""
+            });
+
+            setShowForm(false);
+          }}
+        >
+          Save Product
+        </button>
+      </div>
+    )}
+
+    <input
+      type="text"
+      placeholder="Search products..."
+      value={search}
+      onChange={(e) => setSearch(e.target.value)}
+      style={styles.search}
+    />
+
+    <table style={styles.table}>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>SKU</th>
+          <th>Category</th>
+          <th>Warehouse</th>
+          <th>Quantity</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {filteredProducts.map((product) => (
+          <tr key={product.id}>
+            <td>{product.name}</td>
+            <td>{product.sku}</td>
+            <td>{product.category}</td>
+            <td>{product.warehouse}</td>
+            <td>{product.quantity}</td>
+
+            <td
+              style={
+                product.status === "Low Stock"
+                  ? styles.waiting
+                  : styles.done
+              }
+            >
+              {product.status}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+  </section>
+)}
 
         {/* OPERATIONS */}
         {page === "operations" && (
