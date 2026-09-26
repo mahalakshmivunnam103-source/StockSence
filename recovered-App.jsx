@@ -518,26 +518,21 @@ const styles = {
   app: {
     display: "flex",
     minHeight: "100vh",
-    fontFamily: "Inter, Arial, sans-serif",
-    background: "#b5b7ba",
-    color: "#1e293b",
+    fontFamily: "Arial, sans-serif",
+    background: "#f5f7fb",
+    color: "#1f2937",
   },
 
   sidebar: {
     width: "240px",
-    minHeight: "100vh",
-    background: "#172033",
-    color: "#b4abab",
+    background: "#111827",
+    color: "white",
     padding: "25px 15px",
-    boxSizing: "border-box",
   },
 
   logo: {
     textAlign: "center",
     marginBottom: "40px",
-    fontSize: "24px",
-    fontWeight: "700",
-    letterSpacing: "0.5px",
   },
 
   menu: {
@@ -545,14 +540,13 @@ const styles = {
     width: "100%",
     padding: "14px",
     marginBottom: "8px",
-    borderRadius: "10px",
+    borderRadius: "8px",
     border: "none",
     background: "transparent",
-    color: "#cbd5e1",
+    color: "white",
     textAlign: "left",
     cursor: "pointer",
     fontSize: "15px",
-    transition: "0.2s",
   },
 
   activeMenu: {
@@ -560,20 +554,18 @@ const styles = {
     width: "100%",
     padding: "14px",
     marginBottom: "8px",
-    borderRadius: "10px",
+    borderRadius: "8px",
     border: "none",
-    background: "#3b82f6",
-    color: "#ad9f9f",
+    background: "#2563eb",
+    color: "white",
     textAlign: "left",
     cursor: "pointer",
     fontSize: "15px",
-    fontWeight: "600",
   },
 
   main: {
     flex: 1,
     padding: "30px",
-    boxSizing: "border-box",
   },
 
   header: {
@@ -586,11 +578,10 @@ const styles = {
   profileButton: {
     padding: "10px 18px",
     border: "none",
-    borderRadius: "9px",
+    borderRadius: "8px",
     background: "#2563eb",
     color: "white",
     cursor: "pointer",
-    fontWeight: "600",
   },
 
   cards: {
@@ -601,11 +592,10 @@ const styles = {
   },
 
   card: {
-    background: "#cab9b9",
+    background: "white",
     padding: "20px",
-    borderRadius: "14px",
-    border: "1px solid #acb0b5",
-    boxShadow: "0 4px 12px rgba(15, 23, 42, 0.47)",
+    borderRadius: "12px",
+    boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
   },
 
   icon: {
@@ -613,12 +603,11 @@ const styles = {
   },
 
   filterBox: {
-    background: "#bcacac",
+    background: "white",
     padding: "25px",
-    borderRadius: "14px",
+    borderRadius: "12px",
     marginBottom: "30px",
-    border: "1px solid #aeb2b8",
-    boxShadow: "0 4px 12px rgba(15, 23, 42, 0.5)",
+    boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
   },
 
   filters: {
@@ -629,19 +618,15 @@ const styles = {
 
   select: {
     padding: "12px",
-    borderRadius: "9px",
-    border: "1px solid #cbd5e1",
-    background: "#aa9e9e",
-    color: "#334155",
-    outline: "none",
+    borderRadius: "8px",
+    border: "1px solid #d1d5db",
   },
 
   tableBox: {
-    background: "#a99b9b",
+    background: "white",
     padding: "25px",
-    borderRadius: "14px",
-    border: "1px solid #b4b9bf",
-    boxShadow: "0 4px 12px rgba(15, 23, 42, 0.41)",
+    borderRadius: "12px",
+    boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
   },
 
   table: {
@@ -655,18 +640,18 @@ const styles = {
   },
 
   done: {
-    color: "#16a34a",
-    fontWeight: "600",
+    color: "green",
+    fontWeight: "bold",
   },
 
   waiting: {
-    color: "#d97706",
-    fontWeight: "600",
+    color: "orange",
+    fontWeight: "bold",
   },
 
   ready: {
-    color: "#2563eb",
-    fontWeight: "600",
+    color: "blue",
+    fontWeight: "bold",
   },
 
   productHeader: {
@@ -678,24 +663,19 @@ const styles = {
   addButton: {
     padding: "11px 18px",
     border: "none",
-    borderRadius: "9px",
+    borderRadius: "8px",
     background: "#2563eb",
     color: "white",
     cursor: "pointer",
-    fontWeight: "600",
-    boxShadow: "0 3px 8px rgba(37, 99, 235, 0.25)",
   },
 
   search: {
     width: "100%",
     padding: "12px",
     margin: "20px 0",
-    borderRadius: "9px",
-    border: "1px solid #cbd5e1",
+    borderRadius: "8px",
+    border: "1px solid #d1d5db",
     boxSizing: "border-box",
-    background: "#ab9f9f90",
-    color: "#1e293b",
-    outline: "none",
   },
 
   operationGrid: {
@@ -705,23 +685,20 @@ const styles = {
   },
 
   operationCard: {
-    background: "#c7b7b7",
+    background: "white",
     padding: "30px",
-    borderRadius: "14px",
+    borderRadius: "12px",
     cursor: "pointer",
-    border: "1px solid #707376c9",
-    boxShadow: "0 4px 12px rgba(15, 23, 42, 0.45)",
+    boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
     fontSize: "30px",
-    transition: "0.2s",
   },
 
   profileCard: {
-    background: "#c8bfbf",
+    background: "white",
     padding: "30px",
-    borderRadius: "14px",
+    borderRadius: "12px",
     maxWidth: "600px",
-    border: "1px solid #b7bcc3",
-    boxShadow: "0 4px 12px rgba(16, 24, 41, 0.63)",
+    boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
   },
 };
 
